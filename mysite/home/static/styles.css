@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+   
+/*=====================section 1 =====================================================*/
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+.banner{
+    font-size: 7rem;
+    font-weight: 500;
+}
+.under-banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.main-img-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.main-img{
+    width: 90%;
+}
+
+   
+      
