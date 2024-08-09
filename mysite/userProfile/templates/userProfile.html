@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA</title>
+    <title>Document</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="{% static 'nav.css' %}">
-    <link rel="stylesheet" href="{% static 'section1.css' %}">
     <!--font awesome-->
     <script src="https://kit.fontawesome.com/78acd5deab.js" crossorigin="anonymous"></script>
 </head>
@@ -33,19 +32,31 @@
                 <i class="fa-solid fa-cart-shopping"></i>
             </div>
         </nav>
-        <section>
-            <h1 class="banner">AURA SUPREME EYEWEAR</h1>
-            <div class="under-banner">
-                <p>ANDREA SILVA COLLECTION</p>
-                <p>2023-2024</p>
-                <p>ROME - ITALY</p>
+        <section class="main-section">
+            <div class="navigation">
+                <div><img class="user-profile" src="{% static 'user.jpg' %}"></div>
+                <div class="navigation-div">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Personal information</p>
+                </div>
+                <div class="navigation-div">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <p>Login information</p>
+                </div>
+                <div class="navigation-div">
+                    <i class="fa-regular fa-credit-card"></i>
+                    <p>Payment details</p>
+                </div>
+                <div class="navigation-div">
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Site settings</p>
+                </div>
             </div>
-            <div class="main-img-div">
-                <img class="main-img" src="{% static 'women-main.jpg' %}" alt="My image">
+            <div class="user-section">
+                <h1>user</h1>
             </div>
         </section>
     </div>
-    <script type="module" src="{% static 'index.js' %}"></script>
-    <script type="module" src="{% static 'routeUserAuth.js' %}"></script>
+    
 </body>
 </html>
