@@ -1,4 +1,4 @@
-import { checkLoginState } from "./index.js"
+import { checkLoginState } from "./loginState.js"
 console.log('user auth working')
 
 
