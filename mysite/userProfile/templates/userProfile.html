@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'userSpace.css' %}">
     <link rel="stylesheet" href="{% static 'nav.css' %}">
     <!--font awesome-->
     <script src="https://kit.fontawesome.com/78acd5deab.js" crossorigin="anonymous"></script>
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="user-section">
-                <h1>user</h1>
+                <h1>{{user.full_name}}</h1>
             </div>
         </section>
     </div>
