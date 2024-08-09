@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'home',
     'newArrivals',
     'userProfile',
-    'auth'
+    'userAuth'
 ]
 
 MIDDLEWARE = [
