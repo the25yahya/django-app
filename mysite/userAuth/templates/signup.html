@@ -11,9 +11,9 @@
     <div class="container">
         <form>
             <h1>Create Your Account</h1>
-            <p>Welcome! Please enter your details</p>
-            <div>
-                <span><img src=""></span>
+            <p class="welcome">Welcome! Please enter your details</p>
+            <div class="google">
+                <span><img src="{% static 'google.png' %}"></span>
                 <p>Sign up with google</p>
             </div>
             <div class="breaker">
@@ -37,14 +37,13 @@
                 <label>Retype Password</label>
                 <input id="retype-password">
             </div>
-            <div class="input-field">
+            <div class="accept-terms">
                 <input type="checkbox">
                 <p>I accepte all terms & conditions</p>
             </div>
             <button>Sign up</button>
-            <div>Already have an account? <a href="/login">Log in</a></div>
+            <div class="have-account">Already have an account? <a href="userAuth/login">Log in</a></div>
         </form>
-        <div></div>
     </div>
 </body>
 </html>
