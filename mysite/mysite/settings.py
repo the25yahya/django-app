@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'userAuth'
 ]
 
+APPEND_SLASH = False
 
 SIMPLE_JWT = {
     'SIGNING_KEY': 'testSecretKey123'
