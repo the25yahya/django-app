@@ -82,6 +82,7 @@ form button{
     cursor: pointer;
     transition: .2s;
     border: 0px;
+    margin-top: 20px;
 }
 form button:hover{
     background-color: transparent;

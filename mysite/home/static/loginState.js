@@ -9,7 +9,7 @@ function getCookie(name) {
 
 
 function checkLoginState(){
-    let token = getCookie('token')
+    let token = getCookie('access_token')
     return !!token
 }
 

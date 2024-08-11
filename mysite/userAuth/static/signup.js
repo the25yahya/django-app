@@ -10,7 +10,11 @@ document.getElementById("signup-form").addEventListener("submit",function(e){
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Data from register:', data);
+        console.log('Data from register:', data.access_token , data.refresh_token);
+          // Store tokens in cookies
+        document.cookie = `access_token=${data.access_token}; path=/;`;
+        document.cookie = `refresh_token=${data.refresh_token}; path=/;`;
+
         fetch('/userProfile/',{
             method: 'POST',
             body: JSON.stringify({
