@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'userSpace.css' %}">
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link rel="stylesheet" href="{% static 'siteSettings.css' %}">
+    <!--font awesome-->
+    <script src="https://kit.fontawesome.com/78acd5deab.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        {% include "nav.html" %}
+        <section class="main-section">
+            {% include "userNavigation.html" %}
+            <div class="site-settings">
+                <h1>Site settings</h1>
+                <div class="show-info">
+                    <div>
+                        <h4>language and country</h4>
+                        <p>english</p>
+                    </div>
+                    <button>edit</button>
+                </div>
+                <div class="show-info">
+                    <div>
+                        <h4>currency</h4>
+                        <p>$ - USD</p>
+                    </div>
+                    <button>edit</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+</body>
+</html>

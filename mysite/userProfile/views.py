@@ -38,6 +38,16 @@ def userProfile(request):
                 if user is None:
                     return JsonResponse({'error':'invalid token'},status=404)
                 personal_context = {'user':user} 
+                print(tab)
+                if tab == 'personal':
+                    return render(request,'userProfile.html',personal_context)
+                elif tab == 'settings':
+                    print('returning : settings.html')
+                    return render(request,'settings.html',personal_context)
+                elif tab == 'payement':
+                    return render(request,'payement.html',personal_context)
+                elif tab == 'login':
+                    return render(request,'loginInfo.html',personal_context)
                 return render(request,'userProfile.html',personal_context)
 
     return JsonResponse({'error':'invalid request method'},status=405)

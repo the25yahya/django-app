@@ -27,6 +27,7 @@ document.getElementById('login-form').addEventListener('submit',function(e) {
             document.open();
             document.write(html);
             document.close();
+            history.pushState(null, '', '/userProfile?tab=personal');
           })
           .catch(error=>console.error('ERROR: ',error))
         }else{

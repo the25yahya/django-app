@@ -26,6 +26,7 @@
     font-size: 1.3rem;
 }
 .show-info p{
-    font-weight: 600;
+    font-weight: 700;
     margin-top: 8px;
+    color: gray;
 }
