@@ -25,7 +25,22 @@ def userProfile(request):
             return JsonResponse({'error':'invalid token'},status=404)
         personal_context = {'user':user} 
         return render(request,'userProfile.html',personal_context)
+    if request.method == 'GET':
+            access_token = request.COOKIES.get('access_token')
+            refresh_token = request.COOKIES.get('refresh_token')
+            if access_token and refresh_token :
+                try:
+                    token = Tokens.objects.get(access_token=access_token)
+                    user = token.user
+                except Tokens.DoesNotExist:
+                    user = None
+                if user is None:
+                    return JsonResponse({'error':'invalid token'},status=404)
+                personal_context = {'user':user} 
+                return render(request,'userProfile.html',personal_context)
+
     return JsonResponse({'error':'invalid request method'},status=405)
+
 
 @csrf_exempt
 def register(request):
