@@ -9,7 +9,7 @@ from django.urls import reverse
 import json
 from django.contrib.auth.hashers import check_password
 
-# Create your views here.
+
 @csrf_exempt
 def userProfile(request):
     if request.method == 'POST':
@@ -26,6 +26,7 @@ def userProfile(request):
         personal_context = {'user':user} 
         return render(request,'userProfile.html',personal_context)
     if request.method == 'GET':
+            tab = request.GET.get('tab',None)
             access_token = request.COOKIES.get('access_token')
             refresh_token = request.COOKIES.get('refresh_token')
             if access_token and refresh_token :
