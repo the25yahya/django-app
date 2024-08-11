@@ -1,7 +1,7 @@
 document.getElementById('login-form').addEventListener('submit',function(e) {
   e.preventDefault()  
   const formData = new FormData(this);
-  fetch('/userProfile/login',{
+  fetch('/userAuth/login',{
     method:'POST',
     body: formData
   })
@@ -12,7 +12,7 @@ document.getElementById('login-form').addEventListener('submit',function(e) {
         document.cookie = `refresh_token=${data.refresh_token}; path=/; Secure;`;
         if (data.access_token && data.refresh_token) {
           console.log('[*] got tokens successfully');
-          fetch('/userProfile/',{
+          fetch('/userProfile',{
             method: 'POST',
             body: JSON.stringify({
                 access_token: data.access_token,

@@ -8,3 +8,11 @@ def home(request):
 
 def newArrivals(request):
     return render(request,'newArrivals.html')
+
+def signup(request):
+    context = {}
+    return render(request,'signup.html',context)
+
+
+def login(request):
+    return render(request,'login.html')

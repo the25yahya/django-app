@@ -6,9 +6,9 @@ let user = document.querySelector('.fa-user')
 user.addEventListener("click",()=>{
     const loginState = checkLoginState()
     if (loginState) {
-        document.location.href = '/userProfile/'  
+        document.location.href = '/userProfile?tab=personal'  
     }else{
-        document.location.href = '/userAuth/signup'
+        document.location.href = '/signup'
     }
     
 })

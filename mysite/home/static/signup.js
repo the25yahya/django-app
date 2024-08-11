@@ -4,7 +4,7 @@ checkBox = document.querySelector('#checkbox')
 document.getElementById("signup-form").addEventListener("submit",function(e){
     e.preventDefault();
     const formData = new FormData(this)
-    fetch('/userProfile/register',{
+    fetch('/userAuth/register',{
         method:'POST',
         body:formData
     })
@@ -15,7 +15,7 @@ document.getElementById("signup-form").addEventListener("submit",function(e){
         document.cookie = `access_token=${data.access_token}; path=/;`;
         document.cookie = `refresh_token=${data.refresh_token}; path=/;`;
         if (data.access_token && data.refresh_token) {
-            fetch('/userProfile/',{
+            fetch('/userProfile',{
                 method: 'POST',
                 body: JSON.stringify({
                     access_token: data.access_token,
@@ -30,6 +30,7 @@ document.getElementById("signup-form").addEventListener("submit",function(e){
                 document.open();
                 document.write(html);
                 document.close();
+                history.pushState(null, '', '/userProfile?tab=personal');
             })
             .catch(error=>console.error('ERROR: ',error))
         }
