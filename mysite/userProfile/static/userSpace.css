@@ -47,3 +47,7 @@
 .navigation .navigation-div p{
     margin-left: 10px;
 }
+.navigation .navigation-div a{
+    color: black;
+    text-decoration: none;
+}

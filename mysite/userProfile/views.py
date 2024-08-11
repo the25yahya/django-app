@@ -44,8 +44,8 @@ def userProfile(request):
                 elif tab == 'settings':
                     print('returning : settings.html')
                     return render(request,'settings.html',personal_context)
-                elif tab == 'payement':
-                    return render(request,'payement.html',personal_context)
+                elif tab == 'payment':
+                    return render(request,'payment.html',personal_context)
                 elif tab == 'login':
                     return render(request,'loginInfo.html',personal_context)
                 return render(request,'userProfile.html',personal_context)
