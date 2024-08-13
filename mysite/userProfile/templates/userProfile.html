@@ -19,27 +19,45 @@
             <div class="personal-info">
                 <h1>Personal Information</h1>
                 <div class="info-container">
-                    <div class="show-info">
+                    <div class="show-info show-info-name">
                         <div>
                             <h4>Full name</h4>
                             <p>{{user.full_name}}</p>
                         </div>
-                        <button>edit</button>
+                        <button id="edit-name">edit</button>
                     </div>
-                    <div class="edit-info"></div>
+                    <div class="hide edit-info edit-info-name">
+                        <div>
+                            <div>
+                                <h4>Full name</h4>
+                                <input placeholder="">
+                            </div>
+                            <Button id="cancel-name">cancel</Button>
+                        </div>
+                        <button>Save</button>
+                    </div>
                 </div>
                 <div class="info-container">
-                    <div class="show-info">
+                    <div class="show-info show-info-email">
                         <div>
                             <h4>email</h4>
                             <p>{{user.email}}</p>
                         </div>
-                        <button>edit</button>
+                        <button id="edit-email">edit</button>
                     </div>
-                    <div class="edit-info"></div>
+                    <div class="hide edit-info edit-info-email">
+                        <div>
+                            <div>
+                                <h4>email</h4>
+                                <input placeholder="edit email">
+                            </div>
+                            <Button id="cancel-email">cancel</Button>
+                        </div>
+                        <button>Save</button>
+                    </div>
                 </div>
                 <div class="info-container">
-                    <div class="show-info">
+                    <div class="show-info show-info-phone">
                         <div>
                             <h4>Phone number</h4>
                             <p>{% if user.phone_number %}
@@ -48,12 +66,21 @@
                                 Not set
                             {% endif %}</p>
                         </div>
-                        <button>edit</button>
+                        <button id="edit-phone">edit</button>
                     </div>
-                    <div class="edit-info"></div>
+                    <div class="hide edit-info edit-info-phone">
+                        <div>
+                            <div>
+                                <h4>Phone number</h4>
+                                <input placeholder="">
+                            </div>
+                            <Button id="cancel-phone">cancel</Button>
+                        </div>
+                        <button>Save</button>
+                    </div>
                 </div>
                 <div class="info-container">
-                    <div class="show-info">
+                    <div class="show-info show-info-birthday">
                         <div>
                             <h4>Date of birth</h4>
                             <p>{% if user.birthday %}
@@ -63,12 +90,21 @@
                                 {% endif %}
                             </p>
                         </div>
-                        <button>edit</button>
+                        <button id="edit-birthday">edit</button>
                     </div>
-                    <div class="edit-info"></div>
+                    <div class="hide edit-info edit-info-birthday">
+                        <div>
+                            <div>
+                                <h4>birthday</h4>
+                                <input placeholder="">
+                            </div>
+                            <Button id="cancel-birthday">cancel</Button>
+                        </div>
+                        <button>Save</button>
+                    </div>
                 </div>
                 <div class="info-container">
-                    <div class="show-info">
+                    <div class="show-info show-info-town">
                         <div>
                             <h4>Home town</h4>
                             <p>{% if user.home_town %}
@@ -78,13 +114,22 @@
                                 {% endif %}
                             </p>
                         </div>
-                        <button>edit</button>
+                        <button id="edit-town">edit</button>
                     </div>
-                    <div class="edit-info"></div>
+                    <div class="hide edit-info edit-info-town">
+                        <div>
+                            <div>
+                                <h4>Home town</h4>
+                                <input placeholder="">
+                            </div>
+                            <Button id="cancel-town">cancel</Button>
+                        </div>
+                        <button>Save</button>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-    
+    <script src="{% static 'userProfile.js' %}"></script>
 </body>
 </html>

@@ -1,8 +1,8 @@
 checkBox = document.querySelector('#checkbox')
 
-
 document.getElementById("signup-form").addEventListener("submit",function(e){
     e.preventDefault();
+    if (checkBox.checked) {
     const formData = new FormData(this)
     fetch('/userAuth/register',{
         method:'POST',
@@ -39,4 +39,14 @@ document.getElementById("signup-form").addEventListener("submit",function(e){
         console.error('ERROR : ',error);
         
     })
+    }else{
+        const terms = document.querySelector('.accept-terms');
+        terms.classList.add('shake');
+    
+        // Remove the 'shake' class after 1 second (1000 milliseconds)
+        setTimeout(() => {
+            terms.classList.remove('shake');
+        }, 1000);
+    }
 })
+
