@@ -1,12 +1,48 @@
 <footer>
-    <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    {% load static %}
+    <div class="part-1">
+        <div class="newsletter">
+            <h2>SIGN UP FOR 10% OFF</h2>
+            <P>subscribe to get special offers & once in a lifetime deals</P>
+            <input type="email" placeholder="Enter youre e-mail adress here">
+        </div>
+        <div class="footer-navigation">
+            <h4>About us</h4>
+            <p>Our Story</p>
+            <p>Made with Care</p>
+            <p>Blog</p>
+        </div>
+        <div class="footer-navigation">
+            <h4>Assistance</h4>
+            <p>Terms & Conditions</p>
+            <p>Privacy & Policy</p>
+            <p>Accessibility</p>
+        </div>
+        <div class="footer-navigation">
+            <h4>Boutiques</h4>
+            <p>Find a store</p>
+            <p>Book a free eye test</p>
+        </div>
     </div>
-    <div>
-        <div></div>
-        <div></div>
+    <div class="part-2">
+        <div>
+            <div class="social-media">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+            </div>
+            <p class="rights">&copy; 2024 All Rights Reserved.</p>
+        </div>
+        <div>
+            <div class="footer-site-settings">
+                <div>American (USD $) <span><i class="fa-solid fa-chevron-down"></i></span></div>
+                <div>English <span><i class="fa-solid fa-chevron-down"></i></span></div>
+            </div>
+            <div class="payement-methods">
+                <img src="{% static 'visa.png'%}">
+                <img src="{% static 'card.png'%}">
+                <img src="{% static 'logo.png'%}">
+            </div>
+        </div>
     </div>
 </footer>

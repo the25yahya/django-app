@@ -1,0 +1,92 @@
+footer{
+    background-color: black;
+    color: white;
+    padding: 50px;
+    margin-top: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer div{
+    display: flex;
+}
+.part-1 div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.part-1 .newsletter p{
+    margin: 10px 0px 10px 0px;
+}
+.part-1 .footer-navigation h4{
+    margin-bottom: 10px;
+}
+.part-1 .footer-navigation p{
+    transition: .5s;
+}
+
+.part-1 .footer-navigation p:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.part-1 div input{
+    width: 300px;
+    padding: 15px;
+    background-color: transparent;
+    border: grey solid 2px;
+    margin-top: 10px;
+}
+.part-1{
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(146, 143, 143);
+}
+
+.part-2{
+    justify-content: space-between;
+    margin: 50px 0px 20px 0px;
+}
+.part-2 div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0px 20px 0px 20px;
+}
+.rights{
+    margin-left: 20px;
+}
+.part-2 div .social-media{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.part-2 div .social-media i{
+    margin-right: 5px;
+}
+.part-2 div .footer-site-settings{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.footer-site-settings div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 8px;
+}
+.footer-site-settings div span{
+    margin-left: 10px;
+}
+.part-2 div .payement-methods{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.part-2 div .social-media i{
+    margin: 5px;
+}
+.part-2 img{
+    width: 30px;
+    margin: 10px;
+}

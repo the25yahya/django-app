@@ -1,0 +1,25 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+    <!--font awesome-->
+    <script src="https://kit.fontawesome.com/78acd5deab.js" crossorigin="anonymous"></script>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        {% include 'nav.html' %}
+        {% block content %}{% endblock %}
+        {% include 'footer.html' %}
+    </div>
+    <script type="module" src="{% static 'loginState.js' %}"></script>
+    <script type="module" src="{% static 'routeUserAuth.js' %}"></script>
+    <script type="module" src="{% static 'search.js' %}"></script>
+</body>
+</html>

@@ -20,6 +20,10 @@ def eyeglasses(request):
     list_eyeglasses = eye_glasses.objects.all()
     return render(request,'eyeglasses.html',{'eyeglasses': list_eyeglasses})
 
+def collections(request):
+    list_collections = eye_glasses.objects.all()
+    return render(request,'collections.html',{'collections': list_collections})
+
 def shopCart(request):
     return render(request,'shopCart.html')
 

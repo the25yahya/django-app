@@ -1,81 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <link rel="stylesheet" href="{% static 'nav.css' %}">
-    <link rel="stylesheet" href="{% static 'section1.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'wolf.png' %}">
-    <!--font awesome-->
-    <script src="https://kit.fontawesome.com/78acd5deab.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="container">
-        {% include "nav.html" %}
-        <section>
-            <h1 class="banner">AURA SUPREME EYEWEAR</h1>
-            <div class="under-banner">
-                <p>ANDREA SILVA COLLECTION</p>
-                <p>2023-2024</p>
-                <p>ROME - ITALY</p>
-            </div>
-            <div class="main-img-div">
-                <img class="main-img" src="{% static 'women-main.jpg' %}" alt="My image">
-                <p>Discover</p>
-            </div>
-            <div class="home_sunglasses_container">
-                {% for product in home_sunglasses %}
-                <div class="home_sunglasses">
-                    <img src="{{ product.img }}">
-                    <h4>{{ product.name }}</h4>
+<!-- homepage.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'section1.css' %}">
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<section>
+    <h1 class="banner">AURA SUPREME EYEWEAR</h1>
+    <div class="under-banner">
+        <p>ANDREA SILVA COLLECTION</p>
+        <p>2023-2024</p>
+        <p>ROME - ITALY</p>
+    </div>
+    <div class="main-img-div">
+        <img class="main-img" src="{% static 'women-main.jpg' %}" alt="My image">
+        <p>Discover</p>
+    </div>
+    <div class="home_sunglasses_container">
+        {% for product in home_sunglasses %}
+        <div class="home_sunglasses">
+            <img src="{{ product.img }}">
+            <h4>{{ product.name }}</h4>
+            <button>Discover</button>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="collections">
+        <h1>Collections</h1>
+        <div>
+            <div>
+                <img src="https://images.pexels.com/photos/12421828/pexels-photo-12421828.jpeg?cs=srgb&dl=pexels-42708747-12421828.jpg&fm=jpg">
+                <div>                  
+                    <h4>chic</h4>
+                    <p>make a statement with our collections of trendy glasses</p>
                     <button>Discover</button>
                 </div>
-                {% endfor %}
             </div>
-            <div class="collections">
-                <h1>Collections</h1>
+            <div>
+                <img src="https://images.pexels.com/photos/9536519/pexels-photo-9536519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                 <div>
-                    <div>
-                        <img src="https://images.pexels.com/photos/12421828/pexels-photo-12421828.jpeg?cs=srgb&dl=pexels-42708747-12421828.jpg&fm=jpg">
-                        <div>                  
-                            <h4>chic</h4>
-                            <p>make a statement with our collections of trendy glasses</p>
-                            <button>Discover</button>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="https://images.pexels.com/photos/9536519/pexels-photo-9536519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-                        <div>
-                            <h4>nomad</h4>
-                            <p>Discover our collections of durable and trendy sunglasses for travelers</p>
-                            <button>Discover</button>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="https://www.therow.com/cdn/shop/files/36_0534_1600x.jpg?v=1707133343">
-                        <div>
-                            <h4>trendy</h4>
-                            <p>explore our latest sunglasses that are sure to turn heads wherver you go</p>
-                            <button>Discover</button>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="https://cdn.pinkwoman-fashion.com/images/styles/original/9003.124_BLACK_2-1.jpg">
-                        <div>
-                            <h4>sparkle</h4>
-                            <p>add a touch of fun to your look with our trendy sunglasses collections</p>
-                            <button>Discover</button>
-                        </div>
-                    </div>
+                    <h4>nomad</h4>
+                    <p>Discover our collections of durable and trendy sunglasses for travelers</p>
+                    <button>Discover</button>
                 </div>
             </div>
-        </section>
+            <div>
+                <img src="https://www.therow.com/cdn/shop/files/36_0534_1600x.jpg?v=1707133343">
+                <div>
+                    <h4>trendy</h4>
+                    <p>explore our latest sunglasses that are sure to turn heads wherver you go</p>
+                    <button>Discover</button>
+                </div>
+            </div>
+            <div>
+                <img src="https://cdn.pinkwoman-fashion.com/images/styles/original/9003.124_BLACK_2-1.jpg">
+                <div>
+                    <h4>sparkle</h4>
+                    <p>add a touch of fun to your look with our trendy sunglasses collections</p>
+                    <button>Discover</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <script type="module" src="{% static 'loginState.js' %}"></script>
-    <script type="module" src="{% static 'routeUserAuth.js' %}"></script>
-    <script type="module" src="{% static 'search.js' %}"></script>
-</body>
-</html>
+</section>
+{% endblock %}
