@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import home_sunglasses
+from .models import home_sunglasses,new_arrivals,sun_glasses,eye_glasses
 
 def home(request):
     context = {'name':'yahya'}
@@ -9,13 +9,16 @@ def home(request):
                                        'context':context})
 
 def newArrivals(request):
-    return render(request,'newArrivals.html')
+    list_newArrivals = new_arrivals.objects.all()
+    return render(request,'newArrivals.html',{'newArrivals' : list_newArrivals})
 
 def sunglasses(request):
-    return render(request,'sunglasses.html')
+    list_sunglasses = sun_glasses.objects.all()
+    return render(request,'sunglasses.html',{'sunglasses': list_sunglasses})
 
 def eyeglasses(request):
-    return render(request,'eyeglasses.html')
+    list_eyeglasses = eye_glasses.objects.all()
+    return render(request,'eyeglasses.html',{'eyeglasses': list_eyeglasses})
 
 def shopCart(request):
     return render(request,'shopCart.html')
@@ -29,3 +32,10 @@ def signup(request):
 
 def login(request):
     return render(request,'login.html')
+
+def search(request):
+    query = request.GET.get('query','')
+    results = []
+    if query :
+        results = new_arrivals.objects.filter(name=query)
+    return render(request, 'search.html', {'results': results, 'query': query})

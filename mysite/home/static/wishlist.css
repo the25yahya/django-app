@@ -1,0 +1,15 @@
+.wishlist-div{
+    margin-top: 50px;
+    display: grid;
+    place-items: center;
+}
+.wishlist-div h1{
+    margin-bottom: 15px;
+}
+.wishlist-div button{
+    background-color: black;
+    color: white;
+    border:  1px solid black;
+    padding: 8px 15px 8px 15px;
+    border-radius: 10px;
+}

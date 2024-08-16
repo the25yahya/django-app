@@ -13,7 +13,7 @@
 <body>
     {% include 'nav.html' %}
     <div class="sort-by">
-        <h1>Sunglasses</h1>
+        <h1>Search results for : {{query}}</h1>
         <div>
             <div>
                 <p>sort by</p>
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="product-container">
-        {% for product in sunglasses %}
+        {% for product in results %}
         <div class="Product">
             <img src="{{product.img}}">
             <p class="product-name">{{product.name}}</p>

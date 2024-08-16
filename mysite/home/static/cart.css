@@ -1,0 +1,11 @@
+.shop-cart{
+    padding: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.shop-cart button{
+    background-color: black;
+    color: white;
+    border:  1px solid black;
+    padding: 8px 15px 8px 15px;
+    border-radius: 10px;
+}

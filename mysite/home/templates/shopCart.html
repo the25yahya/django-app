@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aura</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static  'cart.css' %}">
+    <link rel="stylesheet" href="{% static  'nav.css' %}">
+     <!--font awesome-->
+     <script src="https://kit.fontawesome.com/78acd5deab.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    {% include 'nav.html' %}
+    <div class="shop-cart">
+        <h1>Your shopping cart</h1>
+        <p><strong>Your shopping cart is currently empty!</strong> click add to cart to add items to it</p>
+        <button>Continue shopping</button>
+    </div>
 </body>
 </html>

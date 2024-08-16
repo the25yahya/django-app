@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link rel="stylesheet" href="{% static 'wishlist.css' %}">
+        <!--font awesome-->
+        <script src="https://kit.fontawesome.com/78acd5deab.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        {% include 'nav.html' %}
+        <div class="wishlist-div">
+            <h1>Your wishlist is empty !</h1>
+            <p>Browse our site and save your favorite styles</p>
+            <button>Start shopping</button>
+        </div>
+    </div>
+</body>
+</html>

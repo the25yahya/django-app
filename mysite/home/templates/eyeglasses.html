@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura</title>
+    <title>AURA</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link rel="stylesheet" href="{% static 'products.css' %}">
+     <!--font awesome-->
+     <script src="https://kit.fontawesome.com/78acd5deab.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>eyeglasses</h1>
+    {% include 'nav.html' %}
+    <div class="sort-by">
+        <h1>eyeglasses</h1>
+        <div>
+            <div>
+                <p>sort by</p>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div>
+                <p>filter by</p>
+                <i class="fa-solid fa-sliders"></i>
+            </div>
+        </div>
+    </div>
+    <div class="product-container">
+        {% for product in eyeglasses %}
+        <div class="Product">
+            <img src="{{product.img}}">
+            <p class="product-name">{{product.name}}</p>
+            <p class="product-price">${{product.price}}.00</p>
+            <button>Shop Now</button>
+        </div>
+        {% endfor %}
+    </div>
+    <script href="{% static 'routeUserAuth.js'%}"></script>
+    <script href="{% static 'loginState.js'%}"></script>
 </body>
 </html>

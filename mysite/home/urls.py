@@ -1,6 +1,6 @@
 # home/urls.py
 from django.urls import path
-from .views import home, newArrivals,login,signup,sunglasses,eyeglasses,shopCart,wishlist
+from .views import home, newArrivals,login,signup,sunglasses,eyeglasses,shopCart,wishlist,search
 
 urlpatterns = [
     path('', home, name='home'),
@@ -10,5 +10,6 @@ urlpatterns = [
     path('sunglasses',sunglasses,name='sunglasses'),
     path('eyeglasses',eyeglasses,name='eyeglasses'),
     path('shopCart',shopCart,name='shopCart'),
-    path('wishlist',wishlist,name='wishlist')
+    path('wishlist',wishlist,name='wishlist'),
+    path('search', search, name='search'),
 ]
