@@ -4,6 +4,7 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'products.css' %}">
 <link rel="stylesheet" href="{% static 'nav.css' %}">
+<script defer src="{% static 'productDisplay.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -26,7 +27,8 @@
         <img src="{{product.img}}">
         <p class="product-name">{{product.name}}</p>
         <p class="product-price">${{product.price}}.00</p>
-        <button>Shop Now</button>
+        <p class="product-id" data-product-id="{{product.product_id}}" style="display: none;"></p>
+        <button class="display-product">Shop Now</button>
     </div>
     {% endfor %}
 </div>

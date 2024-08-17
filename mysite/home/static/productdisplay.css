@@ -1,0 +1,44 @@
+.product-display-div img{
+    width: 300px;
+    display: block;
+}
+.back{
+    display: flex;
+    align-items: center;
+}
+.back i {
+    margin-right: 5px;
+}
+.product-display-div{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding: 20px;
+}
+.product-display-div .imgs{
+    display: flex;
+}
+.product-name{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.product-price{
+    margin: 10px 0px 10px 0px;
+    font-weight: 600;
+}
+.info{
+    width: 40%;
+}
+.info button{
+    background-color: black;
+    color: white;
+    border: transparent;
+    padding: 10px;
+    transition: .3s;
+}
+.info button:hover{
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+}

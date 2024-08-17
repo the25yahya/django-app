@@ -62,3 +62,6 @@
 .sort-by div p{
     margin-right: 5px;
 }
+#product_display{
+    display: none;
+}

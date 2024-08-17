@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'productDisplay.css' %}">
+<link rel="stylesheet" href="{% static 'nav.css' %}">
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="product-display-div">
+    {% for product in results %}
+    <div class="info">
+        <p class="back"><i class="fa-solid fa-chevron-left"></i><span>BACK</span></p>
+        <p class="product-name">{{product.name}} / {{product.brand}}</p>
+        <p class="product-price">${{product.price}}.00</p>
+        <div>
+            <button>ADD TO CART</button>
+            <button>ADD TO WISHLIST</button>
+        </div>
+    </div>   
+    <div class="imgs">
+        <div>
+            <img src="{{ product.img }}" alt="Product Image 1">
+            <img src="{{ product.img2 }}" alt="Product Image 2">
+        </div>
+        <div>
+            <img src="{{ product.img3 }}" alt="Product Image 3">
+            <img src="{{ product.img4 }}" alt="Product Image 4">
+        </div>
+    </div>        
+    {% endfor %}
+
+</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import home_sunglasses,new_arrivals,sun_glasses,eye_glasses
+from .models import home_sunglasses,new_arrivals,sun_glasses,eye_glasses,ProductDisplay
 
 def home(request):
     context = {'name':'yahya'}
@@ -43,3 +43,16 @@ def search(request):
     if query :
         results = new_arrivals.objects.filter(name=query)
     return render(request, 'search.html', {'results': results, 'query': query})
+
+def product(request):
+    query = request.GET.get('query', '')
+    results = []
+    if query:
+        # Ensure query is an integer, as your ID is an integer
+        try:
+            query_id = int(query)
+            results = ProductDisplay.objects.filter(id=query_id)
+        except ValueError:
+            # Handle the case where query is not a valid integer
+            results = ProductDisplay.objects.none()  # No results if the query is invalid
+    return render(request, 'ProductsDisplay.html', {'results': results, 'query': query})
