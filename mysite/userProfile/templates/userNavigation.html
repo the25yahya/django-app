@@ -1,6 +1,12 @@
 <div class="navigation">
     {% load static %}
-    <div><img class="user-profile" src="{% static 'user.png' %}"></div>
+    <div class="profile-update">
+        <img class="user-profile" src="{% static 'user.png' %}" alt="Profile Picture">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" id="file" name="file" required>
+            <input id="update-picture" type="submit" value="Update">
+        </form>
+    </div>
     <div class="navigation-div">
         <i class="fa-regular fa-user"></i>
         <a href="/userProfile?tab=personal"><p>Personal information</p></a>
