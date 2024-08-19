@@ -127,4 +127,5 @@ section{
     text-decoration: underline;
     font-size: 1.2rem;
     margin-top: 10px;
+    cursor: pointer;
 }
