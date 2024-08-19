@@ -22,8 +22,11 @@ RUN pip install --upgrade pip \
 # Copy the rest of the application code into the container
 COPY . /app/
 
-# Expose the port that Django runs on
+# Collect static files
+RUN python manage.py collectstatic --noinput
+
+# Expose the port that Gunicorn will run on
 EXPOSE 8000
 
-# Set the default command to run the Django development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Use Gunicorn as the WSGI server with increased timeout and workers
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--timeout", "120", "--workers", "3", "mysite.wsgi:application"]
