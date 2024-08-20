@@ -1,0 +1,112 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    display: grid;
+    place-items: center;
+}
+form{
+    padding-top: 20px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+form h1{
+    font-size: 3rem;
+}
+form .welcome{
+    margin: 5px 0px 5px 0px;
+    color: gray;
+    font-weight: 700;
+    opacity: 60;
+}
+form .google{
+    border: black solid 1px;
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+form .google img{
+    width: 15px;
+    margin: 5px 5px 0px 0px;
+}
+form .breaker{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px 10px 0px;
+}
+form .breaker div{
+    height: 1px;
+    width: 250px;
+    background-color: black;
+    margin: 5px 5px 0px 5px;
+}
+form .input-field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    margin: 8px 0px 0px 0px;
+}
+form .input-field label{
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+form .input-field input{
+    padding: 10px;
+    width: 96%;
+}
+form .accept-terms{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+}
+form .accept-terms input{
+    margin-right: 5px;
+}
+form button{
+    background-color: black;
+    width: 100%;
+    padding: 15px 20px 15px 20px;
+    color: white;
+    cursor: pointer;
+    transition: .2s;
+    border: 0px;
+    margin-top: 20px;
+}
+form button:hover{
+    background-color: transparent;
+    color: black;
+}
+form .have-account{
+    margin-top: 10px;
+    font-weight: 700;
+}
+form .have-account a{
+    color: black;
+}
+
+
+/* Define the shake animation */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  /* Apply the shake animation to the element */
+  .shake {
+    animation: shake 0.5s ease-in-out;
+  }

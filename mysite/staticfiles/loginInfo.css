@@ -1,0 +1,27 @@
+.login-info{
+    width: 1000px;
+}
+
+.show-info{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.show-info button{
+    background-color: transparent;
+    border: transparent;
+    font-weight: 700;
+    cursor: pointer;
+}
+.show-info h4{
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+.show-info p{
+    font-weight: 700;
+    margin-top: 8px;
+    color: gray;
+}

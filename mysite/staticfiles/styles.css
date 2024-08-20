@@ -1,0 +1,131 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+   
+/*=====================section 1 =====================================================*/
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+.banner{
+    font-size: 7rem;
+    font-weight: 500;
+}
+.under-banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.main-img-div{
+    width: 90%;
+    justify-content: center;
+    position: relative;
+}
+.main-img-div p{
+    text-decoration: underline;
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: .3s;
+    animation: ease-in;
+}
+.main-img-div p:hover{
+    font-size: 1.3rem;
+}
+.main-img{
+    width: 100%;
+}
+
+   
+/*        home sunglasses     */
+
+.home_sunglasses_container{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.home_sunglasses{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+.home_sunglasses img{
+    width: 420px;
+    margin: 10px;
+}
+.home_sunglasses h4{
+    font-weight: 700;
+    font-size: 1.4rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 10px 0px 10px 0px;
+    margin-left: 10px;
+}
+.home_sunglasses button{
+    text-decoration: underline;
+    background-color: transparent;
+    border: transparent;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+}
+
+/*                 collections        */
+
+
+.collections{
+    padding: 20px;
+    width: fit-content;
+    margin-top: 50px;
+}
+.collections h1{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.collections div{
+    display: flex;
+}
+.collections div div{
+    display: flex;
+    flex-direction: column;
+}
+.collections img{
+    width: 345px;
+    height: 490px;  
+    object-fit: cover;
+    margin: 10px; /* This will crop the image to fit the container */
+}
+.collections div div div{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    align-items: start;
+}
+.collections h4{
+    font: thin;
+}
+.collections P{
+    color: gray;
+    font-weight: 600;
+    width: 90%;
+}
+.collections button{
+    background-color: transparent;
+    border: transparent;
+    text-decoration: underline;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    cursor: pointer;
+}

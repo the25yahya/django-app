@@ -1,0 +1,20 @@
+.site-settings{
+    width: 1000px;
+}
+
+.show-info{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.show-info button{
+    background-color: transparent;
+    border: transparent;
+    font-weight: 700;
+    cursor: pointer;
+}
+.language-country{
+    border-bottom: 1px solid black;
+}
