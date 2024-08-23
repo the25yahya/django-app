@@ -2,7 +2,7 @@ from django.db import models
 
 class Personal(models.Model):
     id = models.AutoField(primary_key=True)
-    full_name = models.CharField(max_length=20, null=False, blank=False)
+    name = models.CharField(max_length=20, null=False, blank=False)
     email = models.EmailField(max_length=100, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)

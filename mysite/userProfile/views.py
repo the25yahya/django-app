@@ -26,7 +26,7 @@ def userProfile(request):
             return JsonResponse({'error':'invalid token'},status=404)
         personal_context = {'user':user} 
         return render(request,'userProfile.html',personal_context)
-    if request.method == 'GET':
+    elif request.method == 'GET':
             tab = request.GET.get('tab',None)
             access_token = request.COOKIES.get('access_token')
             refresh_token = request.COOKIES.get('refresh_token')
@@ -50,6 +50,25 @@ def userProfile(request):
                 elif tab == 'login':
                     return render(request,'loginInfo.html',personal_context)
                 return render(request,'userProfile.html',personal_context)
+            
+    elif request.method == 'PUT':
+        body = json.loads(request.body)
+        fieldType = body.get('fieldType') 
+        value = body.get('value')
+        user_id = body.get('userId')
+            # Update the Personal model with the filename
+        try:
+            # Get the user's Personal record
+            personal = Personal.objects.get(id=user_id)
+            setattr(personal, fieldType, value)
+            # Save the changes to the database
+            personal.save()
+
+            return JsonResponse({
+                'success': 'value updated'
+            })
+        except Personal.DoesNotExist:
+            return JsonResponse({'success': False, 'error': 'User not found'}, status=404)
 
     return JsonResponse({'error':'invalid request method'},status=405)
 
