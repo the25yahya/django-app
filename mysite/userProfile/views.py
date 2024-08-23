@@ -1,10 +1,14 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render
 from userAuth.models import Tokens
 from django.http import JsonResponse
-from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
-from django.urls import reverse 
 import json
+import os
+from django.conf import settings
+import os
+from django.conf import settings
+from .models import Personal
+
 
 
 @csrf_exempt
@@ -49,4 +53,43 @@ def userProfile(request):
 
     return JsonResponse({'error':'invalid request method'},status=405)
 
+
+
+
+@csrf_exempt
+def profile_upload(request):
+    if request.method == 'POST':
+        uploaded_file = request.FILES['file']
+        user_id = request.POST.get('user_id')  # Assuming you send the user_id in the POST request
+        
+        # Define the path to the media directory
+        media_root = os.path.join(settings.MEDIA_ROOT, 'profile_pics')
+        
+        # Create the directory if it doesn't exist
+        if not os.path.exists(media_root):
+            os.makedirs(media_root)
+        
+        # Create the full file path
+        file_path = os.path.join(media_root, uploaded_file.name)
+        
+        # Save the uploaded file
+        with open(file_path, 'wb+') as destination:
+            for chunk in uploaded_file.chunks():
+                destination.write(chunk)
+        
+        # Update the Personal model with the filename
+        try:
+            # Get the user's Personal record
+            personal = Personal.objects.get(id=user_id)
+            personal.profile_pic = uploaded_file.name
+            personal.save()
+
+            return JsonResponse({
+                'success': True,
+                'new_img_url': f'/media/profile_pics/{uploaded_file.name}'
+            })
+        except Personal.DoesNotExist:
+            return JsonResponse({'success': False, 'error': 'User not found'}, status=404)
+    
+    return JsonResponse({'success': False}, status=400)
 

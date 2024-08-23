@@ -1,12 +1,21 @@
 <div class="navigation">
     {% load static %}
     <div class="profile-update">
-        <img class="user-profile" src="{% static 'user.png' %}" alt="Profile Picture">
-        <form action="/upload" method="POST" enctype="multipart/form-data">
+        <!-- Display the current profile picture -->
+        {% if user.profile_pic %}
+            <img class="user-profile" src="/media/profile_pics/{{ user.profile_pic }}" alt="User Profile Picture">
+        {% else %}
+            <img class="user-profile" src="{% static 'user.png' %}" alt="Default Profile Picture">
+        {% endif %}
+        <!-- Form to upload a new profile picture -->
+        <form id="profile-photo"  action="/userProfile/profileUpload" method="POST" enctype="multipart/form-data">
+            <!-- File input for selecting the image -->
             <input type="file" id="file" name="file" required>
+
+            <!-- Submit button to upload the selected image -->
             <input id="update-picture" type="submit" value="Update">
         </form>
-    </div>
+    </div>    
     <div class="navigation-div">
         <i class="fa-regular fa-user"></i>
         <a href="/userProfile?tab=personal"><p>Personal information</p></a>
