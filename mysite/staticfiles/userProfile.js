@@ -48,28 +48,36 @@ cancelButtonTown = document.querySelector('#cancel-town').addEventListener("clic
 })
 
 ////////////// profile photo ////////////////////////////
+
+//access token
+const accessToken = document.cookie.split('; ').find(row => row.startsWith('access_token=')).split('=')[1];
+
+
+//function to extract the user id from the jwt
+function getUserIdFromToken(token) {
+    const base64Url = token.split('.')[1]; // Extract the payload part of the JWT
+    const base64 = base64Decode(base64Url); // Decode the base64
+    const jsonPayload = JSON.parse(base64); // Parse the JSON
+
+    return jsonPayload.user_id; // Adjust based on your JWT payload structure
+}
+
+
+ // Function to decode a base64-encoded string
+ function base64Decode(str) {
+        return decodeURIComponent(atob(str).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    }
+
 document.addEventListener("DOMContentLoaded", function() {
     const fileInput = document.getElementById('file');
     const preview = document.getElementById('preview');
     const form = document.getElementById('profile-photo');
     const submitButton = document.getElementById('update-picture');
 
-    // Function to decode a base64-encoded string
-    function base64Decode(str) {
-        return decodeURIComponent(atob(str).split('').map(function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-    }
 
     // Function to extract the user ID from the JWT
-    function getUserIdFromToken(token) {
-        const base64Url = token.split('.')[1]; // Extract the payload part of the JWT
-        const base64 = base64Decode(base64Url); // Decode the base64
-        const jsonPayload = JSON.parse(base64); // Parse the JSON
-
-        return jsonPayload.user_id; // Adjust based on your JWT payload structure
-    }
-
     // Preview the selected image
     fileInput.addEventListener('change', function() {
         const file = fileInput.files[0];
@@ -105,12 +113,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const formData = new FormData();
         formData.append('file', file);
 
-        // Get the JWT from the cookies
-        const accessToken = document.cookie.split('; ').find(row => row.startsWith('access_token=')).split('=')[1];
 
         // Extract the user ID from the token
         const userId = getUserIdFromToken(accessToken);
-        console.log(userId,accessToken);
         
 
         // Append the user ID to the form data
@@ -130,5 +135,50 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => {
             console.error(error);
         });
+    });
+});
+
+
+console.log('name : ',document.querySelector('#user-name').innerHTML);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener to the parent element
+    document.body.addEventListener('click', function(event) {
+        if (event.target && event.target.classList.contains('save-button')) {
+            // Identify the parent info-container
+            const container = event.target.closest('.info-container');
+            
+            // Determine which field is being edited
+            const editInfo = container.querySelector('.edit-info');
+            const fieldType = editInfo.classList
+                .toString()
+                .match(/edit-info-(\w+)/)[1]; // Extract the field type
+            
+            // Get the new value from the input field
+            const input = container.querySelector('.edit-info input');
+            const value = input.value;
+            
+            // Optionally, perform additional actions like sending the new value to a server
+            const userId = getUserIdFromToken(accessToken);
+            const data = {
+                fieldType: fieldType,
+                value: value,
+                userId: userId
+            };
+        
+            
+
+            fetch('/userProfile', {
+                method: 'PUT',
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        }
     });
 });
