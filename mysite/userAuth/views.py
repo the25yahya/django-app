@@ -13,12 +13,12 @@ def register(request):
     if request.method == 'POST':
 
         #get data from post request
-        full_name = request.POST.get('name')
+        name = request.POST.get('name')
         email = request.POST.get('email')
         password = request.POST.get('password')
 
         personal = Personal.objects.create(
-           full_name= full_name,
+           name= name,
            email=email,
            password = password
         )
